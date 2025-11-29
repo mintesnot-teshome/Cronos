@@ -1,4 +1,4 @@
-# CroBank Manual Parser (`tad_parser.py`)
+# CroBank Manual Parser 
 
 Small, pure‑Python helper for inspecting and exporting Cronos/CroBank datasets when you want to hand‑craft schemas instead of relying on `cronodump`. You describe fixed‑width fields, preview raw records, then export to CSV.
 

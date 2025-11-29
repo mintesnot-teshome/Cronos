@@ -1,0 +1,17 @@
+# Bytecode/cache
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv*/
+venc/
+
+# Large binary dataset artifacts
+*.dat
+*.tad
+cronodump-*/
+
+# Local scratch files
+*.bin
+*.tmp
+*.log
