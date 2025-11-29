@@ -1,0 +1,14 @@
+import binascii, pathlib
+from crodump.Database import Database
+import crodump.koddecoder
+from crodump.hexdump import unhex
+
+hexkey='8100e700c3e470b60ad52cf64fdd00b0d3520012f900f58e7d04000000b471d4aa7ca29c00858b3a33900fb92920bc93180000a9009fe1f1f0fea40088245a00e3d6a8354802844c27b1a60000860055f400f300000050000000004900631094005fa31e0038a700cb006aaf7319000e16d0000092008000cafa5100f7d26be8f891699800decd475bc800dcb2007999ed00006703006ee08fdfb800003f00640b000097680032abfb008900eb0000b326cf0014a031367b00000000fde94000bd462be63dd800834ec7760000588c379ab57aba003ed100230000004a4100ffd91f0000000000008707fc5d00592e2dc500006d607f00001300b7be7ed7a121'
+key_bytes=bytes.fromhex(hexkey)
+kod=crodump.koddecoder.new(list(key_bytes))
+path = next(pathlib.Path(r'D:/Cronos').glob('130.*dento.de*'))
+db=Database(str(path), kod)
+rec=db.stru.readrec(1)
+print(rec[:64])
+print(rec[:64].hex())
+
